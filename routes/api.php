@@ -20,6 +20,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/transaction', [TransactionController::class, 'index']);
+// Route::get('/transaction', [TransactionController::class, 'index']);
+// Route::post('/transaction', [TransactionController::class, 'store']);
+// Route::put('/transaction/{id}', [TransactionController::class, 'update']);
+// Route::get('/transaction/{id}', [TransactionController::class, 'show']);
+// Route::delete('/transaction/{id}', [TransactionController::class, 'destroy']);
+
+
+// use resouser if the name of method on the controller will same like resource
+Route::resource('/transaction', TransactionController::class)->except(['create', 'edit']);
 
 
